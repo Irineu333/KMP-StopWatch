@@ -1,23 +1,27 @@
 package me.neo.common
 
-import androidx.compose.foundation.layout.Box
+import StopWatch
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.Text
-import androidx.compose.material.Button
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
 @Composable
 fun App() {
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-        Text(text = "Olá, mundo!")
-    }
+
+    val stopWatch = remember { StopWatch() }
+
+    StopWatchScreen(
+        formattedTime = stopWatch.formattedTime,
+        onStartClick = {
+            stopWatch.start()
+        },
+        onPauseClick = {
+            stopWatch.pause()
+        },
+        onResetClick = {
+            stopWatch.reset()
+        },
+        modifier = Modifier.fillMaxSize()
+    )
 }
