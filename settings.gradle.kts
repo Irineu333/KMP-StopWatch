@@ -8,8 +8,7 @@ pluginManagement {
     }
     
 }
-rootProject.name = "StopWatchKMM"
-
+rootProject.name = "KMP-StopWatch"
 
 include(":android")
 include(":desktop")
